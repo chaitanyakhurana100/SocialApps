@@ -1,0 +1,36 @@
+<div class="row jumbotron">
+    <div class="container row">
+
+        <div class="jumbotron-text-container col-sm-9">
+            <p><span style="font-size: 30px;">Bringing users & developers closer than ever!</span><br><br>
+                <span class="jumbotron-subtitles">Search Apps</span> <br><span class="jumbotron-subtitles-content">Find latest apps & detailed reviews.</span><br>
+                <span class="jumbotron-subtitles">Get Discovered</span><br> <span class="jumbotron-subtitles-content">Promote your apps with us.</span>
+            </p>
+
+        </div>
+        <div class="jumbotron-signup-form-container col-sm-3">
+            <button class="btn btn-primary btn-lg btn-facebook-signup" onclick="checkLoginState();">Connect with Facebook</button><br/><br/>
+
+            <form id="signUpForm" method="post" action="php/signUp.php">
+                <!--<div class="form-group">
+                    <label for="username">Username</label>
+                    <input name="username" id="username" type="text" class="form-control" placeholder="Pick a username">
+                </div>-->
+                <div class="form-group">
+                    <label for="email_id">Email Id</label>
+                    <input name="email_id" id="email_id" type="text" class="form-control" placeholder="Your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input name="password" id="password" type="password" class="form-control" placeholder="Create a password">
+                </div>
+                <br/>
+                <button type="submit" onclick="submitSignUp()" class="btn btn-success btn-signup-for-socialapps pull-right">Sign up</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+

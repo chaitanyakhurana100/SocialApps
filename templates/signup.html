@@ -1,0 +1,59 @@
+<script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" ></script>
+
+<!--@START Sign Up Modal Window -->
+
+<div class="modal" id="SignupModalWindow" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <span>
+                   <h4 class="modal-title" id="ModalLabel">Sign Up</h4>
+               </span>
+            </div>
+            <div class="modal-body">
+                <!-- start: Facebook button for sign in-->
+                <button class="btn btn-primary btn-lg btn-facebook-signup" onclick="checkLoginState();">Connect with Facebook</button><br/><br/>
+                <!-- end: Facebook button for sign in-->
+                <!-- start: Google+ button for sign in-->
+                <button id="googleSignUp" class="btn btn-danger btn-lg btn-google-signup" onclick="googleBtnClicked();">Connect with Google</button><br/><br/>
+                <script src="js/other/GoogleScript.js"></script>
+                <!-- end: Google+ button for sign in-->
+
+
+                <br/>
+                <div class="container-grayline-divider"></div>
+
+                <br/>
+                <form id="signUpForm" method="post" action="">
+                    <div class="form-group">
+                        <label for="username_signup">Username</label>
+                        <input name="username_signup" id="username_signup" type="text" class="form-control" placeholder="Pick a username">
+                    </div>
+                    <div class="form-group">
+                        <label for="email_id_signup">Email Id</label>
+                        <input name="email_id_signup" id="email_id_signup" onblur="validateEmail()" type="text" class="form-control" placeholder="Your email">
+                        <label class="msg-validation-error" id="error_email_signup"></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="password_signup">Password</label>
+                        <input name="password_signup" id="password_signup" onblur="validatePassword()" type="password" class="form-control" placeholder="Create a password">
+                        <label class="msg-validation-error" id="error_password_signup"></label>
+                    </div>
+                    <div>
+
+                        <button type="submit" onclick="submitSignUp()" class="btn btn-success btn-form-submit">Sign up</button>
+                        <br/><br/><a href="#SigninModalWindow" data-dismiss="modal" class="modal-window-link" data-toggle="modal">Already a member?Sign in</a>
+                    </div>
+                    <br/>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--@END Sign Up Modal Window -->

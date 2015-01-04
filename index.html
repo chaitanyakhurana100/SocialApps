@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="socialApp" xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Social Apps Inc.</title>
+    <link rel="icon" href="images/logo-black.png" type="image/png">
+    <!-- css files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <!--Respond.js minified version to distinguish IE versions -->
+    <script src="js/lib/respond.js"></script>
+    <!--HomePage JS functions-->
+    <script src="js/other/homePage.js"></script>
+    <!-- 1Script required for FB sign in-->
+    <script src="js/other/FbScript.js"></script>
+    <!--3 Scripts required for Google+ sign in-->
+    <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" ></script>
+    <script src="js/other/common.js"></script>
+</head>
+<body>
+
+    <header class="row" ng-include src="'templates/header.html'"></header>
+    <div class="row" ng-include src="'templates/signup.html'"></div>
+    <div class="row" ng-include src="'templates/signin.html'"></div>
+    <main ng-view></main>
+    <footer class="row" ng-include src="'templates/footer.html'"></footer>
+
+
+    <!-- Angular Js minified version 1.2.27 -->
+    <script src="js/lib/angular.min.js"></script>
+    <!-- Angular-Route js contains ngRoute : from v1.2+ ngRoute is used as a dependency injection to module in order for routing to work -->
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="js/lib/jquery-1.11.1.min.js"></script>
+    <!-- Bootstrap distribution v3.3.1 -->
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/module/socialApp.js"></script>
+
+
+
+</body>
+</html>

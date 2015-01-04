@@ -1,0 +1,208 @@
+
+    <div class="row">
+        <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="images/SocialAppsLogo100x77.png"></a>
+            </div>
+
+            <div id="collapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" class="abc">Home</a></li>
+                    <li><a href="#">How it works ?</a></li>
+                    <li><a href="#login">Submit App </a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </div><!--nav-->
+
+    <!-- heading -->
+    <div class="row text-align-center">
+        <h2>Submit your Android App</h2>
+    </div>
+
+    <!-- submit app form -->
+    <div class="row">
+        <form class="form-horizontal" action="">
+            <div class="form-group">
+                <div class="col-xs-1"></div>
+                <label for="appname" class="control-label col-sm-2 hidden-xs">App Name</label>
+                <div class="col-sm-8 col-xs-10">
+                    <input type="text" class="form-control" id="appname" placeholder="Name of App"/>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-1"></div>
+                <label for="company" class="control-label col-sm-2 hidden-xs">Company Name</label>
+                <div class="col-sm-8 col-xs-10">
+                    <input type="text" class="form-control" id="company" placeholder="Name of Company"/>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-1"></div>
+                <label for="developers" class="control-label col-sm-2 hidden-xs">App Name</label>
+                <div class="col-sm-8 col-xs-10">
+                    <input type="text" class="form-control" id="developers" placeholder="Name of Developers"/>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-xs-1"></div>
+                <label for="checkboxgroup" class=" control-label col-sm-2 hidden-xs">My App runs on</label>
+                <div id="checkboxgroup" class="col-sm-8 col-xs-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="hasAndroid" value="android">Android
+                        </label>
+
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="hasIos" value="ios">IOS
+                        </label>
+
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="hasWindows" value="windows">Windows
+                        </label>
+
+                    </div>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-1"></div>
+                <label class="control-label col-sm-2 hidden-xs">What do you want to do today</label>
+                <div class="col-sm-8 col-xs-10">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="toDoAction" ng-model="userAction" id="socialapps" value="socialapps">
+                            I want to upload my app on Social Apps
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="toDoAction" ng-model="userAction" id="thirdparty" value="thirdparty">
+                            I want to provide link to third party hosting store
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="toDoAction" ng-model="userAction" id="socialthird" value="socialthird">
+                            I want to provide link as well as upload on Social Apps
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group" ng-show="uploadAndroid()">
+                <div class="col-xs-1"></div>
+                <label for="uploadAndroidApp" class="control-label col-sm-2 hidden-xs">Android .apk</label>
+                <div class="col-sm-8 col-xs-10">
+                    <input type="file"  class="form-control" id="uploadAndroidApp">
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <div class="form-group" ng-show="uploadIos()" >
+                <div class="col-xs-1"></div>
+                <label for="uploadIosApp" class="control-label col-sm-2 hidden-xs">IOS .ipa</label>
+                <div class="col-sm-8 col-xs-10">
+                 <input type="file" class="form-control" id="uploadIosApp">
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <div class="form-group" ng-show="uploadWindows()">
+                <div class="col-xs-1"></div>
+                <label for="uploadWindowsApp" class="control-label col-sm-2 hidden-xs">Windows .xap</label>
+                <div class="col-sm-8 col-xs-10">
+                 <input type="file" class="form-control" id="uploadWindowsApp">
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <div class="form-group" ng-show="linkAndroid()">
+                <div class="col-xs-1"></div>
+                <label for="appLinkAndroid" class="control-label col-sm-2 hidden-xs">Android App URL</label>
+                <div class="col-sm-8 col-xs-10">
+                    <input type="text" class="form-control" id="appLinkAndroid" placeholder="Download URL of your app"/>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+            <div class="form-group" ng-show="linkIos()">
+                <div class="col-xs-1"></div>
+                <label for="appLinkIos" class="control-label col-sm-2 hidden-xs">IOS App URL</label>
+                <div class="col-sm-8 col-xs-10">
+                    <input type="text"  class="form-control" id="appLinkIos" placeholder="Download URL of your app"/>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+            <div class="form-group" ng-show="linkWindows()">
+                <div class="col-xs-1"></div>
+                <label for="appLinkWindows" class="control-label col-sm-2 hidden-xs">Windows App URL</label>
+                <div class="col-sm-8 col-xs-10">
+                    <input type="text" class="form-control" id="appLinkWindows" placeholder="Download URL of your app"/>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-1"></div>
+                <label for="categories" class="control-label col-sm-2 hidden-xs">Categories</label>
+                <div class="col-sm-8 col-xs-10">
+                    <select class="form-control" id="categories">
+                        <option>Select a Category</option>
+                        <option>Games</option>
+                        <option>Utility</option>
+                    </select>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-1"></div>
+                <label for="uploadimage" class="control-label col-sm-2 hidden-xs">Upload Image</label>
+                <div class="col-sm-8 col-xs-10">
+                    <input type="file" class="form-control" id="uploadimage"/>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-1"></div>
+                <label for="shortdesc" class="control-label col-sm-2 hidden-xs">Short Description</label>
+                <div class="col-sm-8 col-xs-10">
+                    <textarea name="shortdesc" id="shortdesc" class="form-control"  placeholder="Short Description (max 400 chars)"  rows="2"></textarea>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-1"></div>
+                <label for="detaildesc" class="control-label col-sm-2 hidden-xs">Detailed Description</label>
+                <div class="col-sm-8 col-xs-10">
+                    <textarea name="shortdesc" id="detaildesc" class="form-control" rows="10" placeholder="Description of your app- what it does, key features, how is it different from other apps etc."></textarea>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit My App</button>
+
+        </form>
+    </div><!-- form row end -->

@@ -1,0 +1,24 @@
+<script src="js/other/FbScript.js"></script>
+<div class="row jumbotron">
+    <div class="container">
+        <p><span style="font-size: 30px;">Bringing users & developers closer than ever!</span><br><br>
+            <span class="jumbotron-subtitles">Search Apps</span> <br><span class="jumbotron-subtitles-content">Find latest apps & detailed reviews.</span><br>
+            <span class="jumbotron-subtitles">Get Discovered</span><br> <span class="jumbotron-subtitles-content">Promote your apps with us.</span></p>
+    </div>
+
+</div>
+<div class="row container">
+    <div class="col-lg-4 col-md-4 col-sm-4" ng-repeat="app in appList">
+        <a href="#" class="thumbnail">
+            <div class="thumbnail-header">
+                <div class="thumbnail-icon"><img class="img-rounded" src="{{app.appIcon}}"/></div>
+                <div class="thumbnail-heading"><h4>{{app.appName}}</h4></div>
+            </div>
+            <div class="thumbnail-description img-rounded caption">
+                <span class="img-rounded">{{app.appDesc}}</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+
