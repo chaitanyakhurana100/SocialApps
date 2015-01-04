@@ -15,6 +15,7 @@ function submitSignUp(){
 
 
 function validateEmail(){
+
     $("#error_email_signup").html('');
     var email = $("#email_id_signup").val();
     var at_pos = email.indexOf("@");
@@ -32,10 +33,10 @@ function validateEmail(){
         return true;
     }
 
-
 }
 
 function validatePassword(){
+
     $("#error_password_signup").html('');
     var password = $("#password_signup").val();
     var errorMsg="";
@@ -55,19 +56,21 @@ function validatePassword(){
 
 }
 
-function render() {
+function renderSignIn() {
     gapi.signin.render('googleSignIn', {
         'callback': 'onSignInCallback',
         'clientid': '',
         'cookiepolicy': 'single_host_origin',
         'requestvisibleactions': 'http://schema.org/AddAction',
         'scope': 'https://www.googleapis.com/auth/plus.login ' +
-        'https://www.googleapis.com/auth/plus.me '+
-        'https://www.googleapis.com/auth/userinfo.email '+
-        'https://www.googleapis.com/auth/userinfo.profile '+
+        'https://www.googleapis.com/auth/plus.me ' +
+        'https://www.googleapis.com/auth/userinfo.email ' +
+        'https://www.googleapis.com/auth/userinfo.profile ' +
         ' https://www.googleapis.com/auth/plus.profile.emails.read'
     });
-
+}
+function renderSignUp()
+{
     gapi.signin.render('googleSignUp', {
         'callback': 'onSignInCallback',
         'clientid': '',
@@ -81,16 +84,5 @@ function render() {
     });
 }
 
-function isGoogleBtnClicked(){
-    return window.googleBtnClicked;
-}
 
-function googleBtnClicked(){
-    window.googleBtnClicked=true;
-}
-
-function googleBtnUnclicked()
-{
-    window.googleBtnClicked=false;
-}
-
+/
